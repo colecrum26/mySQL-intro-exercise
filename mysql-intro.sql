@@ -28,4 +28,4 @@
     SELECT * FROM employees WHERE employees.title = 'Geek Squad' AND middleInitial IS NULL;
 -- find all products from the products table whose stock level is in the range -- of 500 to 1200. 
 -- Order by Price from least to greatest. Hint: Use the between keyword
-    SELECT * FROM products ORDER BY products.price ASC AND products.stockLevel BETWEEN 500 AND 1200;
+    SELECT * FROM products WHERE products.stockLevel BETWEEN 500 AND 1200 ORDER BY price;
