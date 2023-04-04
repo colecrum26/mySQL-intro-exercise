@@ -13,17 +13,19 @@
 -- find all products and sort them by price from greatest to least
     SELECT * FROM products ORDER BY products.price DESC;
 -- find all employees who don't have a middle initial
-    SELECT * FROM employees WHERE NOT middleInitial;
+    SELECT * FROM employees WHERE middleInitial IS NULL;
 -- find distinct product prices
-    SELECT * FROM products WHERE ;
+    SELECT DISTINCT products.price FROM products;
 -- find all employees whose first name starts with the letter ‘j’
     SELECT * FROM employees WHERE firstName LIKE 'a%';
 -- find all Macbooks
     SELECT * FROM products WHERE products.name = 'Macbook';
 -- find all products that are on sale
-    SELECT * FROM
+    SELECT * FROM products WHERE NOT products.OnSale = 0;
 -- find the average price of all products
-
+    SELECT AVG(price) FROM products;
 -- find all Geek Squad employees who don't have a middle initial
-
--- find all products from the products table whose stock level is in the range -- of 500 to 1200. Order by Price from least to greatest. Hint: Use the between keyword
+    SELECT * FROM employees WHERE employees.title = 'Geek Squad' AND middleInitial IS NULL;
+-- find all products from the products table whose stock level is in the range -- of 500 to 1200. 
+-- Order by Price from least to greatest. Hint: Use the between keyword
+    SELECT * FROM products ORDER BY products.price ASC AND products.stockLevel BETWEEN 500 AND 1200;
